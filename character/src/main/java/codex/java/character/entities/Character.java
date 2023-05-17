@@ -3,12 +3,9 @@ package codex.java.character.entities;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-
-import jakarta.peristence.Id;
-
-@Entity
+@Entity 
 public class Character {
 
     //**************************************** */
@@ -33,7 +30,7 @@ public class Character {
 
     public Integer AC;
 
-    public Integer intitiative;
+    public Integer initiative;
 
     public Integer speed;
 
@@ -179,7 +176,7 @@ public class Character {
         this.currentHitPoints = currentHitPoints;
         this.tempHitPoints = tempHitPoints;
         this.AC = AC;
-        this.intitiative = initiative;
+        this.initiative = initiative;
         this.speed = speed;
         this.baseSpeed = baseSpeed;
         this.age = age;
