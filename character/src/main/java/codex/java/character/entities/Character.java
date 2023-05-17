@@ -23,7 +23,6 @@ public class Character {
         // CHARACTER DESCRIPTORS
         ///////////////////////////////////////////////
 
-
     public String characterName;
 
     public Integer maxHitPoints;
@@ -117,4 +116,45 @@ public class Character {
     public Integer chaMisc;
 
     public Integer chaSave;
+
+        ///////////////////////////////////////////////
+        // Skills
+        ///////////////////////////////////////////////
+
+    public Integer acrobatics;
+
+    public Integer animalHandling;
+
+    public Integer arcana;
+
+    public Integer athletics;
+
+    public Integer deception;
+
+    public Integer history;
+
+    public Integer insight;
+
+    public Integer intimidation;
+
+    public Integer investigation;
+
+    public Integer medicine;
+
+    public Integer nature;
+
+    public Integer perception;
+
+    public Integer performance;
+
+    public Integer persuasion;
+
+    public Integer religion;
+
+    public Integer sleightOfHand;
+
+    public Integer stealth;
+
+    public Integer survival;
+
 }
