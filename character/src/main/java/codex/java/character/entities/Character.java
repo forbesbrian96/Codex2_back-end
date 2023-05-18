@@ -5,20 +5,20 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity 
+@Entity
 public class Character {
 
-    //**************************************** */
-    //  Entity Properties
-    //**************************************** */
-    
-    @Id //Denotes this property as the id/primary key
-    @GeneratedValue(strategy = GenerationType.AUTO) //auto generates
+    // **************************************** */
+    // Entity Properties
+    // **************************************** */
+
+    @Id // Denotes this property as the id/primary key
+    @GeneratedValue(strategy = GenerationType.AUTO) // auto generates
     public Integer id;
 
-        ///////////////////////////////////////////////
-        // CHARACTER DESCRIPTORS
-        ///////////////////////////////////////////////
+    ///////////////////////////////////////////////
+    // CHARACTER DESCRIPTORS
+    ///////////////////////////////////////////////
 
     public String characterName;
 
@@ -62,9 +62,9 @@ public class Character {
 
     public Integer profBonus;
 
-        ///////////////////////////////////////////////
-        // Ability Scores
-        ///////////////////////////////////////////////
+    ///////////////////////////////////////////////
+    // Ability Scores
+    ///////////////////////////////////////////////
 
     public Integer strScore;
 
@@ -81,7 +81,7 @@ public class Character {
     public Integer dexMisc;
 
     public Integer dexSave;
-    
+
     public Integer conScore;
 
     public Integer conMod;
@@ -114,9 +114,9 @@ public class Character {
 
     public Integer chaSave;
 
-        ///////////////////////////////////////////////
-        // Skills
-        ///////////////////////////////////////////////
+    ///////////////////////////////////////////////
+    // Skills
+    ///////////////////////////////////////////////
 
     public Integer acrobatics;
 
@@ -154,23 +154,34 @@ public class Character {
 
     public Integer survival;
 
-        ///////////////////////////////////////////////
-        // Languages and Proficiencies
-        ///////////////////////////////////////////////
+    ///////////////////////////////////////////////
+    // Languages and Proficiencies
+    ///////////////////////////////////////////////
 
     public String languages;
 
     public String proficiencies;
 
-    //**************************************** */
-    //  Constructors
-    //**************************************** */
+    // **************************************** */
+    // Constructors
+    // **************************************** */
 
-    public Character(){
+    public Character() {
         // Default Constructor
     }
 
-    public Character(String characterName, Integer maxHitPoints, Integer currentHitPoints, Integer tempHitPoints, Integer AC, Integer initiative, Integer speed, Integer baseSpeed, Integer age, String height, Integer weight, String eyes, String hair, String skin, String race, String characterClass, String alignment, String background, Integer experience, Integer level, Integer profBonus, Integer strScore, Integer strMod, Integer strMisc, Integer strSave, Integer dexScore, Integer dexMod, Integer dexMisc, Integer dexSave, Integer conScore, Integer conMod, Integer conMisc, Integer conSave, Integer intScore, Integer intMod, Integer intMisc, Integer intSave, Integer wisScore, Integer wisMod, Integer wisMisc, Integer wisSave, Integer chaScore, Integer chaMod, Integer chaMisc, Integer chaSave, Integer acrobatics, Integer animalHandling, Integer arcana, Integer athletics, Integer deception, Integer history, Integer insight, Integer intimidation, Integer investigation, Integer medicine, Integer nature, Integer perception, Integer performance, Integer persuasion, Integer religion, Integer sleightOfHand, Integer stealth, Integer survival, String languages, String proficiencies) {
+    public Character(String characterName, Integer maxHitPoints, Integer currentHitPoints, Integer tempHitPoints,
+            Integer AC, Integer initiative, Integer speed, Integer baseSpeed, Integer age, String height,
+            Integer weight, String eyes, String hair, String skin, String race, String characterClass, String alignment,
+            String background, Integer experience, Integer level, Integer profBonus, Integer strScore, Integer strMod,
+            Integer strMisc, Integer strSave, Integer dexScore, Integer dexMod, Integer dexMisc, Integer dexSave,
+            Integer conScore, Integer conMod, Integer conMisc, Integer conSave, Integer intScore, Integer intMod,
+            Integer intMisc, Integer intSave, Integer wisScore, Integer wisMod, Integer wisMisc, Integer wisSave,
+            Integer chaScore, Integer chaMod, Integer chaMisc, Integer chaSave, Integer acrobatics,
+            Integer animalHandling, Integer arcana, Integer athletics, Integer deception, Integer history,
+            Integer insight, Integer intimidation, Integer investigation, Integer medicine, Integer nature,
+            Integer perception, Integer performance, Integer persuasion, Integer religion, Integer sleightOfHand,
+            Integer stealth, Integer survival, String languages, String proficiencies) {
         this.characterName = characterName;
         this.maxHitPoints = maxHitPoints;
         this.currentHitPoints = currentHitPoints;
@@ -238,15 +249,15 @@ public class Character {
         this.proficiencies = proficiencies;
     }
 
-    //**************************************** */
-    //  Getters and Setters
-    //**************************************** */
+    // **************************************** */
+    // Getters and Setters
+    // **************************************** */
 
-    public Integer getId(){
+    public Integer getId() {
         return this.id;
     }
 
-    public void setId(Integer id){
+    public void setId(Integer id) {
         this.id = id;
     }
 
