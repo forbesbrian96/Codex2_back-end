@@ -3,6 +3,7 @@ package codex.java.character.controllers;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -130,10 +131,23 @@ public class CharacterController {
             character.setSurvival(fixCharacter.getSurvival());
             character.setLanguages(fixCharacter.getLanguages());
             character.setProficiencies(fixCharacter.getProficiencies());
+
+            Character.save(character);
             
-            return Characters.save(character);
+            return character;
         });
         
+        // Return all Characters
         return Characters.findAll();
 }
+
+    /////////////////////////////////////////////////////////////////
+    // DESTROY
+    /////////////////////////////////////////////////////////////////
+
+    @DeleteMapping("/characters/{id}")
+    public List<Character> destroy(@PathVariable Integer id){
+        Characters.deleteById(id);
+        return Characters.findAll();
+    }
 }
