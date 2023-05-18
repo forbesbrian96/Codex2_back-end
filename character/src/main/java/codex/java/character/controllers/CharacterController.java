@@ -132,7 +132,7 @@ public class CharacterController {
             character.setLanguages(fixCharacter.getLanguages());
             character.setProficiencies(fixCharacter.getProficiencies());
 
-            Character.save(character);
+            Characters.save(character);
             
             return character;
         });
@@ -145,6 +145,7 @@ public class CharacterController {
     // DESTROY
     /////////////////////////////////////////////////////////////////
 
+    // Delete request to /characters/{id}
     @DeleteMapping("/characters/{id}")
     public List<Character> destroy(@PathVariable Integer id){
         Characters.deleteById(id);
