@@ -5,6 +5,8 @@ import java.util.Optional;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import codex.java.character.repositories.CharacterRepository;
@@ -25,8 +27,8 @@ public class CharacterController {
     // INDEX
     /////////////////////////////////////////////////////////////////
 
-    // Get request to /character
-    @GetMapping("/character")
+    // Get request to /characters
+    @GetMapping("/characters")
     public List<Character> index(){
         return Characters.findAll();
     }
@@ -36,8 +38,19 @@ public class CharacterController {
     /////////////////////////////////////////////////////////////////
 
     // Get request to /character/:id
-    @GetMapping("/character/:id")
+    @GetMapping("/characters/:id")
     public Optional<Character> show(@PathVariable Integer id){
         return Characters.findById(id);
+    }
+
+    /////////////////////////////////////////////////////////////////
+    // CREATE
+    /////////////////////////////////////////////////////////////////
+
+    // Post request to /characters
+    @PostMapping("/characters")
+    public List<Character> create(@RequestBody Character newCharacter){
+        Characters.save(newCharacter); // Create the new Character
+        return Characters.findAll();
     }
 }
