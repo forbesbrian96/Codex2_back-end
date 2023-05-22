@@ -3,16 +3,18 @@ package codex.java.character.controllers;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import codex.java.character.repositories.CharacterRepository;
 import codex.java.character.entities.Character;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 @RestController
 public class CharacterController {
@@ -30,6 +32,7 @@ public class CharacterController {
     /////////////////////////////////////////////////////////////////
 
     // Get request to /characters
+    @CrossOrigin // Enable CORS <-
     @GetMapping("/characters")
     public List<Character> index(){
         return Characters.findAll();
@@ -50,6 +53,7 @@ public class CharacterController {
     /////////////////////////////////////////////////////////////////
 
     // Post request to /characters
+    @CrossOrigin // Enable CORS <-
     @PostMapping("/characters")
     public List<Character> create(@RequestBody Character newCharacter){
         Characters.save(newCharacter); // Create the new Character
@@ -61,6 +65,7 @@ public class CharacterController {
     /////////////////////////////////////////////////////////////////
 
     // Put request to /characters/{id}
+    @CrossOrigin // Enable CORS <-
     @PutMapping("/characters/{id}")
     public List<Character> update(@RequestBody Character fixCharacter, @PathVariable Integer id){
         // Find character by it's id then use map to update it
@@ -146,6 +151,7 @@ public class CharacterController {
     /////////////////////////////////////////////////////////////////
 
     // Delete request to /characters/{id}
+    @CrossOrigin // Enable CORS <-
     @DeleteMapping("/characters/{id}")
     public List<Character> destroy(@PathVariable Integer id){
         Characters.deleteById(id);
