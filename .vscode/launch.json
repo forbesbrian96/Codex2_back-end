@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CharacterApplication",
+            "request": "launch",
+            "mainClass": "codex.java.character.CharacterApplication",
+            "projectName": "character"
+        },
+        {
+            "vmArgs": "--enable-preview"
+        }
+    ]
+}
